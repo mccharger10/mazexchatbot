@@ -3,13 +3,20 @@
   <head>
     <title>Dialogflow Integration</title>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger
-      chat-icon="https://dialogflow.com/images/api_home_laptop.svg"
-      intent="WELCOME"
-      chat-title="My Dialogflow Bot"
-      agent-id="gymagent"
-      language-code="en"
-    ></df-messenger>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        window.dfMessengerSettings = {
+          "agentId": "gymagent",
+          "apiKey": "AIzaSyDMS0XpOm-Ls2EkUUkyaACnKqfhN_lYO7I",
+          "language": "en",
+          "chatTitle": "My Dialogflow Bot",
+          "chatIcon": "https://dialogflow.com/images/api_home_laptop.svg"
+        };
+        var s = document.createElement("script");
+        s.src = "https://www.gstatic.com/dialogflow-console/fast/messenger/loader.js";
+        document.body.appendChild(s);
+      });
+    </script>
   </head>
   <body>
   </body>
